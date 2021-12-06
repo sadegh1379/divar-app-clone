@@ -1,3 +1,4 @@
+
 const bookmark = require("../assets/icons/bookmark.png")
 const bookmarkFilled = require("../assets/icons/bookmark-filled.png")
 const home = require("../assets/icons/home.png")
@@ -6,6 +7,7 @@ const settings = require("../assets/icons/settings.png")
 const back = require("../assets/icons/back.png")
 const rightArrow = require("../assets/icons/right-arrow.png")
 const category = require("../assets/images/divar/category_icon.png")
+
 
 
 
@@ -18,5 +20,5 @@ export default {
     settings,
     rightArrow,
 
-    category
+    category,
 }

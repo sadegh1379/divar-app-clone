@@ -72,14 +72,15 @@ const Tabs = () => {
                 }}
             />
             <Tab.Screen
+              
+                name="Add_tab"
+                component={Empty}
                 listeners={({ navigation }) => ({
                     tabPress: (event) => {
                       event.preventDefault();
                       navigation.navigate("Add");
                     },
                   })}
-                name="Add_tab"
-                component={Empty}
                 options={{
                     tabBarIcon:({focused})=><TabIcon 
                         focused={focused}
