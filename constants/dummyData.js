@@ -54,6 +54,294 @@ const homeCategories = [
     },
 ]
 
+const user = {
+    recentVisits : [
+        {
+            id : 1,
+            name : 'خودرو سواری'
+        },
+        {
+            id : 2,
+            name : 'قطعات یدکی و لوازم جانبی خودرو'
+        },
+        {
+            id : 3,
+            name : 'موبایل'
+        },
+        {
+            id : 4,
+            name : 'خودرو 206'
+        },
+        {
+            id : 5,
+            name : 'آپارتمان'
+        },
+        {
+            id : 6,
+            name : 'پراید 11  SE'
+        },
+    ]
+}
+
+const products = [
+    {
+        id : 1,
+        name : 'سمند سورن 97',
+        rang: 'سفید',
+        location : 'تهران ، بومهن',
+        model : '1388',
+        karkard : '250',
+        brand : 'سمند',
+        bime : '4 ماه',
+        girbox : 'دنده ای ',
+        sanad : 'چند برگی',
+        forosh : 'نقد واقساط',
+        price : '11000000',
+        motor : true,
+        shasi : true,
+        badane : false,
+        description : 'فروشنده هستم ، فنی سالم در حد',
+        phone : '09376770472',
+        group : 'سواری و وانت',
+        images : [{
+            id : 1,
+            image : require("../assets/images/divar/samand-2.jpg")
+
+             },{
+             id : 2,
+            image : require("../assets/images/divar/samand-1.jpg")
+
+            },{
+            id : 3,
+            image : require("../assets/images/divar/samand-3.jpg")
+             },
+        ]
+    },
+    {
+        id : 2,
+        name : 'سمند سورن 97',
+        rang: 'سفید',
+        location : 'تهران ، بومهن',
+        model : '1388',
+        karkard : '250',
+        brand : 'سمند',
+        bime : '4 ماه',
+        girbox : 'دنده ای ',
+        sanad : 'چند برگی',
+        forosh : 'نقد واقساط',
+        price : '11000000',
+        motor : true,
+        shasi : true,
+        badane : false,
+        description : 'فروشنده هستم ، فنی سالم در حد',
+        phone : '09376770472',
+        group : 'سواری و وانت',
+        images : [{
+            id : 1,
+            image : require("../assets/images/divar/samand-1.jpg")
+             },{
+             id : 2,
+             image : require("../assets/images/divar/samand-2.jpg")
+            },{
+            id : 3,
+            image : require("../assets/images/divar/samand-3.jpg")
+             },
+        ]
+    },
+    {
+        id : 3,
+        name : 'سمند سورن 97',
+        rang: 'سفید',
+        location : 'تهران ، بومهن',
+        model : '1388',
+        karkard : '250',
+        brand : 'سمند',
+        bime : '4 ماه',
+        girbox : 'دنده ای ',
+        sanad : 'چند برگی',
+        forosh : 'نقد واقساط',
+        price : '11000000',
+        motor : true,
+        shasi : true,
+        badane : false,
+        description : 'فروشنده هستم ، فنی سالم در حد',
+        phone : '09376770472',
+        group : 'سواری و وانت',
+        images : [{
+            id : 1,
+            image : require("../assets/images/divar/samand-1.jpg")
+             },{
+             id : 2,
+             image : require("../assets/images/divar/samand-2.jpg")
+            },{
+            id : 3,
+            image : require("../assets/images/divar/samand-3.jpg")
+             },
+        ]
+    },
+    {
+        id : 4,
+        name : 'سمند سورن 97',
+        rang: 'سفید',
+        location : 'تهران ، بومهن',
+        model : '1388',
+        karkard : '250',
+        brand : 'سمند',
+        bime : '4 ماه',
+        girbox : 'دنده ای ',
+        sanad : 'چند برگی',
+        forosh : 'نقد واقساط',
+        price : '11000000',
+        motor : true,
+        shasi : true,
+        badane : false,
+        description : 'فروشنده هستم ، فنی سالم در حد',
+        phone : '09376770472',
+        group : 'سواری و وانت',
+        images : [{
+            id : 1,
+            image : require("../assets/images/divar/samand-3.jpg")
+
+             },{
+             id : 2,
+             image : require("../assets/images/divar/samand-2.jpg")
+            },{
+            id : 3,
+            image : require("../assets/images/divar/samand-1.jpg")
+
+             },
+        ]
+    },
+    {
+        id : 5,
+        name : 'سمند سورن 97',
+        rang: 'سفید',
+        location : 'تهران ، بومهن',
+        model : '1388',
+        karkard : '250',
+        brand : 'سمند',
+        bime : '4 ماه',
+        girbox : 'دنده ای ',
+        sanad : 'چند برگی',
+        forosh : 'نقد واقساط',
+        price : '11000000',
+        motor : true,
+        shasi : true,
+        badane : false,
+        description : 'فروشنده هستم ، فنی سالم در حد',
+        phone : '09376770472',
+        group : 'سواری و وانت',
+        images : [{
+            id : 1,
+            image : require("../assets/images/divar/samand-1.jpg")
+             },{
+             id : 2,
+             image : require("../assets/images/divar/samand-2.jpg")
+            },{
+            id : 3,
+            image : require("../assets/images/divar/samand-3.jpg")
+             },
+        ]
+    },
+    {
+        id : 6,
+        name : 'سمند سورن 97',
+        rang: 'سفید',
+        location : 'تهران ، بومهن',
+        model : '1388',
+        karkard : '250',
+        brand : 'سمند',
+        bime : '4 ماه',
+        girbox : 'دنده ای ',
+        sanad : 'چند برگی',
+        forosh : 'نقد واقساط',
+        price : '11000000',
+        motor : true,
+        shasi : true,
+        badane : false,
+        description : 'فروشنده هستم ، فنی سالم در حد',
+        phone : '09376770472',
+        group : 'سواری و وانت',
+        images : [{
+            id : 1,
+            image : require("../assets/images/divar/samand-3.jpg")
+
+             },{
+             id : 2,
+             image : require("../assets/images/divar/samand-2.jpg")
+            },{
+            id : 3,
+            image : require("../assets/images/divar/samand-1.jpg")
+
+             },
+        ]
+    },
+    {
+        id : 7,
+        name : 'سمند سورن 97',
+        rang: 'سفید',
+        location : 'تهران ، بومهن',
+        model : '1388',
+        karkard : '250',
+        brand : 'سمند',
+        bime : '4 ماه',
+        girbox : 'دنده ای ',
+        sanad : 'چند برگی',
+        forosh : 'نقد واقساط',
+        price : '11000000',
+        motor : true,
+        shasi : true,
+        badane : false,
+        description : 'فروشنده هستم ، فنی سالم در حد',
+        phone : '09376770472',
+        group : 'سواری و وانت',
+        images : [{
+            id : 1,
+            image : require("../assets/images/divar/samand-1.jpg")
+             },{
+             id : 2,
+             image : require("../assets/images/divar/samand-2.jpg")
+            },{
+            id : 3,
+            image : require("../assets/images/divar/samand-3.jpg")
+             },
+        ]
+    },
+    {
+        id : 8,
+        name : 'سمند سورن 97',
+        rang: 'سفید',
+        location : 'تهران ، بومهن',
+        model : '1388',
+        karkard : '250',
+        brand : 'سمند',
+        bime : '4 ماه',
+        girbox : 'دنده ای ',
+        sanad : 'چند برگی',
+        forosh : 'نقد واقساط',
+        price : '11000000',
+        motor : true,
+        shasi : true,
+        badane : false,
+        description : 'فروشنده هستم ، فنی سالم در حد',
+        phone : '09376770472',
+        group : 'سواری و وانت',
+        images : [{
+            id : 1,
+            image : require("../assets/images/divar/samand-1.jpg")
+             },{
+             id : 2,
+             image : require("../assets/images/divar/samand-2.jpg")
+            },{
+            id : 3,
+            image : require("../assets/images/divar/samand-3.jpg")
+             },
+        ]
+    }
+]
+
 export default {
-    homeCategories
+    homeCategories,
+    user,
+    products
 }
