@@ -102,18 +102,34 @@ const Home = ({navigation}) => {
       <TouchableOpacity
         activeOpacity={0.6}
         style={{
-          width :200,
-          height : 100,
+          width :120,
+          height : 150,
           justifyContent:'center',
           alignItems:'center',
-          backgroundColor:'yellow'
         }}
       >
         {/* icon */}
-        <View>
-          {item.icon('red',25)}
+        <View 
+          style={{
+            borderWidth :1,
+            borderColor:COLORS.gray,
+            width :50,
+            height : 50,
+            justifyContent:'center',
+            alignItems:'center',
+            borderRadius : 25
+          }}
+        >
+          {item.icon(COLORS.darkGray,25)}
         </View>
         {/* text */}
+        <Text 
+          style={{
+            ...FONTS.body4,
+            color:COLORS.darkGray,
+            marginTop : SIZES.padding
+          }}
+        >{item.name}</Text>
       </TouchableOpacity>
     )
   }
@@ -127,6 +143,9 @@ const Home = ({navigation}) => {
             showsHorizontalScrollIndicator={false}
             keyExtractor={item =>`${item.id}`}
             renderItem={renderCategoryItem}
+            style={{
+              backgroundColor:COLORS.lightGray
+            }}
        />
       </View>
     )
