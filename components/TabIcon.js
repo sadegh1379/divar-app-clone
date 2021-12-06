@@ -1,8 +1,9 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
-import {COLORS } from '../constants'
+import {COLORS, FONTS } from '../constants'
+import Entypo from 'react-native-vector-icons/Entypo'
 
-const TabIcon = ({focused , icon}) => {
+const TabIcon = ({focused , icon , label}) => {
     return (
         <View
             style={{
@@ -12,30 +13,13 @@ const TabIcon = ({focused , icon}) => {
                 justifyContent:'center'
             }}
         >
-           <Image
-            source={icon}
-            resizeMode="contain"
+           <Entypo name={icon} color={focused?COLORS.red : COLORS.gray} size={30} />
+           <Text
             style={{
-                width : 30,
-                height : 30,
-                tintColor : focused ? COLORS.darkGreen : COLORS.lightLime
+                color: focused ? COLORS.red : COLORS.gray,
+                ...FONTS.body5
             }}
-           />
-           {focused && 
-                <View
-                    style={{
-                        height : 5,
-                        backgroundColor : COLORS.darkGreen,
-                        borderTopLeftRadius : 10,
-                        borderTopRightRadius : 10,
-                        position : 'absolute',
-                        bottom : 0,
-                        left : 0,
-                        right : 0
-                    }}
-                />
-           }
-           
+           >{label}</Text>
         </View>
     )
 }

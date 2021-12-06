@@ -1,15 +1,13 @@
-import Login from "./Login"
+import Add from "./Add"
+import Chat from "./Chat"
+import Groupe from "./Groupe"
 import Home from "./Home"
-import Recipe from "./Recipe"
-import Settings from "./Settings"
-import BookMark from "./BookMark"
-import Search from "./Search"
+import Profile from "./Profile"
 
 export {
-    Login,
     Home,
-    Recipe,
-    Settings,
-    BookMark,
-    Search
+    Add,
+    Chat,
+    Profile,
+    Groupe
 }

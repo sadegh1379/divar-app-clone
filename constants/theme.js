@@ -17,6 +17,7 @@ export const COLORS = {
     gray2: '#F8F8F8',
     lightGray: "#F5F6FB",
     lightGray2: '#757575',
+    red : 'rgb(177,39,37)',
 
     transparentBlack1: 'rgba(2, 2, 2, 0.1)',
     transparentBlack3: 'rgba(2, 2, 2, 0.3)',

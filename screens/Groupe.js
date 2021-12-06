@@ -1,12 +1,12 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const Settings = () => {
+const Groupe = () => {
     return (
         <View style={{flex :1 , justifyContent:'center' , alignItems : 'center'}}>
-            <Text>Settings Screen</Text>
+            <Text>Groupe Screen</Text>
         </View>
     )
 }
 
-export default Settings
+export default Groupe
