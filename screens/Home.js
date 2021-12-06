@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState , useRef} from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,8 @@ import {
   FlatList,
   Image,
   TextInput,
+  ScrollView,
+  Animated
 } from 'react-native';
 import { COLORS, dummyData, FONTS, icons, images, SIZES } from '../constants';
 import AntDesign from 'react-native-vector-icons/AntDesign'
@@ -15,8 +17,16 @@ import { HomeIcon , CarIcon, PhoneIcon, LightIcon, ServiceIcon,
    WatchIcon, DiceIcon, GroupIcon, UserIcon, BagIcon
    } from '../constants/VectorIcons';
 
-const Home = ({navigation}) => {
 
+const Home = ({navigation}) => {
+  
+  // state
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [showCatText , setShowCatText] = useState(true);
+  const [categoryItemHeight , setCategiryItemHeight] = useState(120)
+
+
+  // functions
   const renderSeachBar = ()=>{
     return(
       <View
@@ -97,19 +107,22 @@ const Home = ({navigation}) => {
     )
   }
 
+
   const renderCategoryItem = ({item , index})=>{
     return(
       <TouchableOpacity
+      
         activeOpacity={0.6}
         style={{
-          width :120,
-          height : 150,
+          width :100,
+          height : categoryItemHeight ,
           justifyContent:'center',
           alignItems:'center',
         }}
       >
         {/* icon */}
         <View 
+        
           style={{
             borderWidth :1,
             borderColor:COLORS.gray,
@@ -117,19 +130,23 @@ const Home = ({navigation}) => {
             height : 50,
             justifyContent:'center',
             alignItems:'center',
-            borderRadius : 25
+            borderRadius : 25,
+            backgroundColor:COLORS.white
           }}
         >
           {item.icon(COLORS.darkGray,25)}
         </View>
         {/* text */}
-        <Text 
-          style={{
-            ...FONTS.body4,
-            color:COLORS.darkGray,
-            marginTop : SIZES.padding
-          }}
-        >{item.name}</Text>
+        {showCatText && (
+            <Text 
+            style={{
+              ...FONTS.body4,
+              color:COLORS.darkGray,
+              marginTop : SIZES.padding
+            }}
+          >{item.name}</Text>
+        )}
+      
       </TouchableOpacity>
     )
   }
@@ -144,11 +161,66 @@ const Home = ({navigation}) => {
             keyExtractor={item =>`${item.id}`}
             renderItem={renderCategoryItem}
             style={{
-              backgroundColor:COLORS.lightGray
+              backgroundColor:COLORS.lightGray,
+              borderBottomWidth : 1,
+              borderBottomColor:COLORS.gray,
+            
             }}
        />
       </View>
     )
+  }
+
+  const renderRecently = ()=>{
+    return(
+      <View>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+          <Text style={{...FONTS.h1}}>sasd</Text>
+
+      </View>
+    )
+  }
+
+  const handleScroll = (event)=>{
+    let newPosition = event.nativeEvent.contentOffset.y
+    if(scrollPosition < newPosition + 5){
+      setShowCatText(false)
+      setCategiryItemHeight(80)
+      setScrollPosition(newPosition)
+    }else{
+      setShowCatText(true)
+      setCategiryItemHeight(120)
+      setScrollPosition(newPosition)
+    }
   }
 
   return(
@@ -157,8 +229,14 @@ const Home = ({navigation}) => {
       {renderSeachBar()}
       {/* categories */}
       {renderCategories()}
-      {/* recently see */}
-      {/* products */}
+      <ScrollView
+          onScroll={handleScroll}
+      >
+          {/* recently see */}
+          {renderRecently()}
+          {/* products */}
+      </ScrollView>
+     
     </SafeAreaView>
   ) 
 };
