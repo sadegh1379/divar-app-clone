@@ -3,9 +3,15 @@ import {View, Text, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLORS, FONTS, numberWithCommas, SIZES} from '../constants';
 
-const ProductCard = ({image, name, price, location, karkard}) => {
+const ProductCard = ({image, name, price, location, karkard , onPress}) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+        activeOpacity={0.7}
+        onPress={onPress}
+        style={{
+            backgroundColor:COLORS.white
+        }}
+    >
       <View
         style={{
             height : 200,
@@ -16,10 +22,48 @@ const ProductCard = ({image, name, price, location, karkard}) => {
           {/* details */}
            <View
             style={{
-                flex : 1
+                flex : 1,
+                padding : 10,
+                
             }}
            >
-               <Text>{ numberWithCommas(price)}</Text>
+               <View>
+                   <Text
+                    style={{
+                        ...FONTS.h2,
+                        color:COLORS.black
+                    }}
+                   >{name}</Text>
+               </View>
+               <View 
+                style={{
+                    height:'80%',
+                    justifyContent:'flex-end',
+                    
+                }}
+               >
+                   <Text
+                    style={{
+                        ...FONTS.body4,
+                        color:COLORS.gray
+                    }}
+                   >
+                       کارکرد {karkard} کیلومتر
+                   </Text>
+                    <Text
+                         style={{
+                            ...FONTS.body4,
+                            color:COLORS.gray,
+                            lineHeight : 30
+                        }}
+                    >{ numberWithCommas(price)} تومان</Text>
+                    <Text
+                         style={{
+                            ...FONTS.body4,
+                            color:COLORS.gray
+                        }}
+                    >در {location}</Text>
+               </View>
            </View>
           {/* image */}
           <View

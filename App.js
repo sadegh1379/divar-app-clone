@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 import {I18nManager , StatusBar , LogBox} from 'react-native'
 import Tabs from "./navigation/tabs";
-import { Add } from './screens';
+import { Add, Details } from './screens';
 import { COLORS } from './constants';
 
 const Stack = createStackNavigator();
@@ -31,6 +31,10 @@ const App = () => {
                   <Stack.Screen
                     name="Add"
                     component={Add}
+                />
+                   <Stack.Screen
+                    name="Details"
+                    component={Details}
                 />
             
             </Stack.Navigator>

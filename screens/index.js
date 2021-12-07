@@ -1,5 +1,6 @@
 import Add from "./Add"
 import Chat from "./Chat"
+import Details from "./Details"
 import Groupe from "./Groupe"
 import Home from "./Home"
 import Profile from "./Profile"
@@ -9,5 +10,6 @@ export {
     Add,
     Chat,
     Profile,
-    Groupe
+    Groupe,
+    Details
 }

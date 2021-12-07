@@ -4,7 +4,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Octicons from 'react-native-vector-icons/Octicons'
-
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const HomeIcon = ({color  , size})=>(
     <MaterialCommunityIcons name="home-city-outline" size={size} color={color}/>
@@ -46,6 +46,22 @@ const BagIcon = ({color  , size})=>(
     <MaterialIcons name="home-repair-service" size={size} color={color}/>
 )
 
+const CloseIcon = ({color , size})=>(
+    <AntDesign name="close" size={size} color={color}/>
+)
+
+const RightArrow = ({color , size})=>(
+    <AntDesign name="arrowright" size={size} color={color}/>
+)
+
+const BookMarkIcon = ({color  , size})=>(
+    <FontAwesome name="bookmark" size={size} color={color}/>
+)
+
+const VerticalDotsIcon = ({color  , size})=>(
+    <MaterialCommunityIcons name="dots-vertical" size={size} color={color}/>
+)
+
 export {
     HomeIcon ,
      CarIcon,
@@ -56,5 +72,9 @@ export {
      DiceIcon,
      GroupIcon,
     UserIcon,
-    BagIcon
+    BagIcon,
+    CloseIcon,
+    RightArrow,
+    BookMarkIcon,
+    VerticalDotsIcon
     }
