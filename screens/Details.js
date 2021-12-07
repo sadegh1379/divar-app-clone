@@ -9,13 +9,14 @@ import {
   StatusBar,
   StyleSheet,
 } from 'react-native';
-import {Dots, HeaderBar} from '../components';
+import {BottomModal, Dots, HeaderBar, TextButton} from '../components';
 import {COLORS, FONTS, numberWithCommas, SIZES} from '../constants';
 import {CloseIcon, LeftIcon, ZoomOut} from '../constants/VectorIcons';
 
 const Details = ({navigation, route}) => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [showFullImages, setShowFullImages] = useState(false);
+  const [showPhoneModal, setShowPhoneModal] = useState(false);
 
   useEffect(() => {
     const {product} = route.params;
@@ -254,12 +255,12 @@ const Details = ({navigation, route}) => {
         style={{
           backgroundColor: COLORS.lightGray,
           marginVertical: SIZES.base,
-          height: 240,
+          height: 275,
           padding: SIZES.base,
-          marginBottom : SIZES.padding
+          marginBottom: SIZES.padding,
         }}>
         {/* price */}
-        <View style={[styles.centerBetween , {padding:SIZES.base}]}>
+        <View style={[styles.centerBetween, {padding: SIZES.base}]}>
           <Text style={styles.grayText}>قیمت</Text>
           <Text style={styles.defText}>
             {numberWithCommas(selectedItem ? selectedItem.price : 0)}
@@ -271,52 +272,94 @@ const Details = ({navigation, route}) => {
             flexDirection: 'row',
             marginHorizontal: SIZES.base,
             justifyContent: 'center',
-            marginVertical : SIZES.base,
-            borderTopWidth : 1,
-            borderTopColor : COLORS.border,
-            paddingTop : 20,
-         
+            marginVertical: SIZES.base,
+            borderTopWidth: 1,
+            borderTopColor: COLORS.border,
+            paddingTop: 50,
+            paddingBottom: SIZES.base,
           }}>
-          <View style={[styles.colorView, {backgroundColor: 'gold'
-          , borderTopLeftRadius : SIZES.radius , borderBottomLeftRadius : SIZES.radius}]}>
-            <Text style={{color:COLORS.white , ...FONTS.body5}}>پایین</Text>
+          <View
+            style={[
+              styles.colorView,
+              {
+                backgroundColor: 'gold',
+                borderTopLeftRadius: SIZES.radius,
+                borderBottomLeftRadius: SIZES.radius,
+              },
+            ]}>
+            <Text style={{color: COLORS.white, ...FONTS.body5}}>پایین</Text>
           </View>
           <View style={[styles.colorView, {backgroundColor: COLORS.lime}]}>
-            <Text style={{color:COLORS.white , ...FONTS.body5}}>منصفانه</Text>
+            <Text style={{color: COLORS.white, ...FONTS.body5}}>منصفانه</Text>
           </View>
-          <View style={[styles.colorView, {backgroundColor: COLORS.darkGreen,
-          borderTopRightRadius:SIZES.radius , borderBottomRightRadius : SIZES.radius}]}>
-            <Text style={{color:COLORS.white , ...FONTS.body5}}>بالا</Text>
+          <View
+            style={[
+              styles.colorView,
+              {
+                backgroundColor: COLORS.darkGreen,
+                borderTopRightRadius: SIZES.radius,
+                borderBottomRightRadius: SIZES.radius,
+              },
+            ]}>
+            <Text style={{color: COLORS.white, ...FONTS.body5}}>بالا</Text>
           </View>
         </View>
         {/* description */}
         <Text
-            style={{
-                ...FONTS.body4,
-                color:COLORS.black,
-                borderBottomWidth : 1,
-                borderBottomColor:COLORS.border,
-                paddingBottom : SIZES.base
-            }}
-        >کوییک مدل اسفند ۹۸ لاستیکها صد درصد بیمه ۳
-            ماه کم کار کرده تو پارکینگ مصقف بوده بسیار خانگی بوده وماشین دوم 
-            استفاده شده و خوب نگهداری شده در حد نو هستش .....ینی سالی ۹تابیشتر راه نرفته
+          style={{
+            ...FONTS.body4,
+            color: COLORS.black,
+            borderBottomWidth: 1,
+            borderBottomColor: COLORS.border,
+            paddingBottom: SIZES.base,
+            paddingHorizontal: SIZES.base,
+          }}>
+          کوییک مدل اسفند ۹۸ لاستیکها صد درصد بیمه ۳ ماه کم کار کرده تو پارکینگ
+          مصقف بوده بسیار خانگی بوده وماشین دوم استفاده شده و خوب نگهداری شده در
+          حد نو هستش .....ینی سالی ۹تابیشتر راه نرفته
         </Text>
         {/* get elevition */}
         <TouchableOpacity>
-            <View
-                style={{
-                    flexDirection:'row',
-                    justifyContent:'space-between',
-                    alignItems:'center',
-                    padding:SIZES.base,
-                    paddingVertical :SIZES.base + 10
-                }}
-            >
-                <Text style={{color:COLORS.black , ...FONTS.body3}}>نحوه ارزیابی قیمت</Text>
-                <LeftIcon color={COLORS.gray} size={20}/>
-            </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              padding: SIZES.base,
+              paddingVertical: SIZES.base + 10,
+            }}>
+            <Text style={{color: COLORS.black, ...FONTS.body3}}>
+              نحوه ارزیابی قیمت
+            </Text>
+            <LeftIcon color={COLORS.gray} size={20} />
+          </View>
         </TouchableOpacity>
+      </View>
+    );
+  };
+
+  const renderFixedPhoneInfo = () => {
+    return (
+      <View
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: 60,
+          backgroundColor: COLORS.white,
+          padding: SIZES.base,
+          zIndex: 5,
+        }}>
+        <TextButton
+          title="اطلاعات تماس"
+          onPress={() => console.log('phone info')}
+          customContainerStyle={{
+            width: '100%',
+            height: '100%',
+          }}
+          onPress={() => setShowPhoneModal(true)}
+        />
       </View>
     );
   };
@@ -372,11 +415,9 @@ const Details = ({navigation, route}) => {
 
   return (
     <View
-      style={
-        {
-          // paddingTop: 53,
-        }
-      }>
+      style={{
+        paddingBottom: 38,
+      }}>
       <HeaderBar
         showBookMark={true}
         bookMarkOnPress={() => console.log('bookmark')}
@@ -388,7 +429,17 @@ const Details = ({navigation, route}) => {
           zIndex: 20,
         }}
       />
-      <ScrollView>
+
+      {/* fixed phone info */}
+      {renderFixedPhoneInfo()}
+      {/* phone modal */}
+      {showPhoneModal && (
+        <BottomModal onClose={() => setShowPhoneModal(false)}>
+          <Text>sadegh</Text>
+        </BottomModal>
+      )}
+
+      <ScrollView showsVerticalScrollIndicator={false}>
         {/* images */}
         <View>
           {renderImages()}
@@ -431,8 +482,8 @@ const styles = StyleSheet.create({
   colorView: {
     flex: 1,
     height: 20,
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
