@@ -62,6 +62,10 @@ const VerticalDotsIcon = ({color  , size})=>(
     <MaterialCommunityIcons name="dots-vertical" size={size} color={color}/>
 )
 
+const ZoomOut = ({color  , size})=>(
+    <MaterialIcons name="zoom-out-map" size={size} color={color}/>
+)
+
 export {
     HomeIcon ,
      CarIcon,
@@ -76,5 +80,6 @@ export {
     CloseIcon,
     RightArrow,
     BookMarkIcon,
-    VerticalDotsIcon
+    VerticalDotsIcon,
+    ZoomOut
     }

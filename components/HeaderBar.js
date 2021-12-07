@@ -6,7 +6,6 @@ import { View,
      } from 'react-native'
 import { COLORS, SIZES } from '../constants'
 import { BookMarkIcon, RightArrow, VerticalDotsIcon } from '../constants/VectorIcons'
-import LinearGradient from 'react-native-linear-gradient'
 
 const HeaderBar = ({showBookMark , bookMarkOnPress , showDetails , barStyle="dark" , barColor = "#fff" , DetailsOnPress , navigation}) => {
     return (
@@ -18,7 +17,7 @@ const HeaderBar = ({showBookMark , bookMarkOnPress , showDetails , barStyle="dar
                 left : 0,
                 padding:SIZES.base+ 5,
                 backgroundColor:COLORS.white,
-                flexDirection:'row'
+                flexDirection:'row',
             }}
         >
             <StatusBar barStyle={`${barStyle}-content`} backgroundColor={barColor}/>
