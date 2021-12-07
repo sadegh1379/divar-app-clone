@@ -53,7 +53,7 @@ const Home = ({navigation}) => {
             alignItems: 'center',
             backgroundColor: COLORS.white,
             borderWidth: 1,
-            borderColor: COLORS.gray,
+            borderColor: COLORS.border,
             borderRadius: SIZES.radius - 4,
             padding: SIZES.base - 5,
           }}>

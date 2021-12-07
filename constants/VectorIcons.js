@@ -66,6 +66,10 @@ const ZoomOut = ({color  , size})=>(
     <MaterialIcons name="zoom-out-map" size={size} color={color}/>
 )
 
+const LeftIcon = ({color , size})=>(
+    <AntDesign name="left" size={size} color={color}/>
+)
+
 export {
     HomeIcon ,
      CarIcon,
@@ -81,5 +85,6 @@ export {
     RightArrow,
     BookMarkIcon,
     VerticalDotsIcon,
-    ZoomOut
+    ZoomOut,
+    LeftIcon
     }

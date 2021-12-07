@@ -33,7 +33,7 @@ const HeaderBar = ({showBookMark , customStyle , bookMarkOnPress , showDetails ,
                 <TouchableOpacity
                     onPress={()=>navigation.goBack()}
                 >
-                    <RightArrow size={25} color={COLORS.black}/>
+                    <RightArrow size={25} color={COLORS.white}/>
                 </TouchableOpacity>
             </View>
             {/* lefts */}

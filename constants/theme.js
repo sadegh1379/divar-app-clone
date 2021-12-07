@@ -19,6 +19,7 @@ export const COLORS = {
     lightGray2: '#FAFAFA',
     darkGray : '#696969',
     red : 'rgb(177,39,37)',
+    border : '#F5F5F5',
 
     transparentBlack1: 'rgba(2, 2, 2, 0.1)',
     transparentBlack3: 'rgba(2, 2, 2, 0.3)',
@@ -61,11 +62,11 @@ export const FONTS = {
     h2: { fontFamily: "IRANSansMobile", fontSize: SIZES.h2 },
     h3: { fontFamily: "IRANSansMobile", fontSize: SIZES.h3 },
     h4: { fontFamily: "IRANSansMobile", fontSize: SIZES.h4 },
-    body1: { fontFamily: "IRANSansMobile", fontSize: SIZES.body1, lineHeight: 36 },
-    body2: { fontFamily: "IRANSansMobile", fontSize: SIZES.body2, lineHeight: 30 },
-    body3: { fontFamily: "IRANSansMobile", fontSize: SIZES.body3, lineHeight: 22 },
-    body4: { fontFamily: "IRANSansMobile", fontSize: SIZES.body4, lineHeight: 22 },
-    body5: { fontFamily: "IRANSansMobile", fontSize: SIZES.body5, lineHeight: 22 },
+    body1: { fontFamily: "IRANSansMobile", fontSize: SIZES.body1, },
+    body2: { fontFamily: "IRANSansMobile", fontSize: SIZES.body2,  },
+    body3: { fontFamily: "IRANSansMobile", fontSize: SIZES.body3,},
+    body4: { fontFamily: "IRANSansMobile", fontSize: SIZES.body4,  },
+    body5: { fontFamily: "IRANSansMobile", fontSize: SIZES.body5, },
 };
 
 const appTheme = { COLORS, SIZES, FONTS };
