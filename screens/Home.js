@@ -104,7 +104,7 @@ const Home = ({navigation}) => {
                 activeOpacity={0.4}
                 style={{
                   borderLeftWidth: 2,
-                  borderLeftColor: COLORS.gray,
+                  borderLeftColor: COLORS.lightGray,
                   paddingLeft: SIZES.base,
                 }}
                 // onpress
@@ -118,7 +118,7 @@ const Home = ({navigation}) => {
                   <Text
                     style={{
                       color: COLORS.black,
-                      ...FONTS.h3,
+                      ...FONTS.body4,
                       marginRight: 10,
                     }}>
                     20 شهر
@@ -141,7 +141,7 @@ const Home = ({navigation}) => {
         activeOpacity={0.6}
         style={{
           width: 100,
-          height: categoryItemHeight,
+          height: 80,
           justifyContent: 'center',
           alignItems: 'center',
         }}>
@@ -150,8 +150,8 @@ const Home = ({navigation}) => {
           style={{
             borderWidth: 1,
             borderColor: COLORS.gray,
-            width: 50,
-            height: 50,
+            width: 40,
+            height: 40,
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 25,
@@ -160,16 +160,14 @@ const Home = ({navigation}) => {
           {item.icon(COLORS.darkGray, 25)}
         </View>
         {/* text */}
-        {showCatText && (
           <Text
             style={{
               ...FONTS.body4,
               color: COLORS.darkGray,
-              marginTop: SIZES.padding,
+              marginTop: SIZES.base,
             }}>
             {item.name}
           </Text>
-        )}
       </TouchableOpacity>
     );
   };
@@ -186,7 +184,7 @@ const Home = ({navigation}) => {
           style={{
             backgroundColor: COLORS.lightGray,
             borderBottomWidth: 1,
-            borderBottomColor: COLORS.gray,
+            borderBottomColor: COLORS.lightGray,
           }}
         />
       </View>
@@ -228,7 +226,6 @@ const Home = ({navigation}) => {
                 activeOpacity={0.7}
                 onPress={() => setSearch(item.name)}
                 style={{
-                  padding: SIZES.base,
                   borderWidth: 1,
                   borderColor: COLORS.gray,
                   borderRadius: SIZES.radius + 10,
@@ -236,11 +233,13 @@ const Home = ({navigation}) => {
                   marginVertical: SIZES.base,
                   justifyContent: 'center',
                   alignItems: 'center',
+                  height :30,
+                  padding : 4
                 }}>
                 <Text
                   style={{
                     color: COLORS.darkGray,
-                    ...FONTS.h4,
+                    ...FONTS.body5,
                   }}>
                   {item.name}
                 </Text>

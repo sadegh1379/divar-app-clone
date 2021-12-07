@@ -86,7 +86,7 @@ const user = {
 const products = [
     {
         id : 1,
-        name : 'سمند سورن 97',
+        name : 'مزدا',
         rang: 'سفید',
         location : 'تهران ، بومهن',
         model : '1388',
@@ -96,7 +96,7 @@ const products = [
         girbox : 'دنده ای ',
         sanad : 'چند برگی',
         forosh : 'نقد واقساط',
-        price : '11000000',
+        price : '825000000',
         motor : true,
         shasi : true,
         badane : false,
@@ -105,7 +105,7 @@ const products = [
         group : 'سواری و وانت',
         images : [{
             id : 1,
-            image : require("../assets/images/divar/samand-2.jpg")
+            image : require("../assets/images/divar/mazda.jpg")
 
              },{
              id : 2,
@@ -119,17 +119,17 @@ const products = [
     },
     {
         id : 2,
-        name : 'سمند سورن 97',
+        name : 'سانتافه 2015',
         rang: 'سفید',
         location : 'تهران ، بومهن',
         model : '1388',
-        karkard : '250',
+        karkard : '20',
         brand : 'سمند',
         bime : '4 ماه',
         girbox : 'دنده ای ',
         sanad : 'چند برگی',
         forosh : 'نقد واقساط',
-        price : '11000000',
+        price : '2000000000',
         motor : true,
         shasi : true,
         badane : false,
@@ -138,7 +138,7 @@ const products = [
         group : 'سواری و وانت',
         images : [{
             id : 1,
-            image : require("../assets/images/divar/samand-1.jpg")
+            image : require("../assets/images/divar/santafe.jpg")
              },{
              id : 2,
              image : require("../assets/images/divar/samand-2.jpg")

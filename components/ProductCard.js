@@ -9,14 +9,16 @@ const ProductCard = ({image, name, price, location, karkard , onPress}) => {
         activeOpacity={0.7}
         onPress={onPress}
         style={{
-            backgroundColor:COLORS.white
+            backgroundColor:COLORS.white,
+            paddingVertical :SIZES.base
+
         }}
     >
       <View
         style={{
-            height : 200,
+            height : 130,
             flexDirection:'row',
-            padding:SIZES.base
+            padding:SIZES.base,
         }}
       >
           {/* details */}
@@ -75,8 +77,8 @@ const ProductCard = ({image, name, price, location, karkard , onPress}) => {
             <Image
                 source={image}
                 style={{
-                    width:160,
-                    height :160,
+                    width:120,
+                    height :120,
                     borderRadius : SIZES.radius - 6
                 }}
                 resizeMode="cover"

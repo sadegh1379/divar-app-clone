@@ -7,7 +7,7 @@ import { View,
 import { COLORS, SIZES } from '../constants'
 import { BookMarkIcon, RightArrow, VerticalDotsIcon } from '../constants/VectorIcons'
 
-const HeaderBar = ({showBookMark , bookMarkOnPress , showDetails , barStyle="dark" , barColor = "#fff" , DetailsOnPress , navigation}) => {
+const HeaderBar = ({showBookMark , customStyle , bookMarkOnPress , showDetails , barStyle="dark" , barColor = "#fff" , DetailsOnPress , navigation}) => {
     return (
         <View
             style={{
@@ -18,6 +18,7 @@ const HeaderBar = ({showBookMark , bookMarkOnPress , showDetails , barStyle="dar
                 padding:SIZES.base+ 5,
                 backgroundColor:COLORS.white,
                 flexDirection:'row',
+                ...customStyle
             }}
         >
             <StatusBar barStyle={`${barStyle}-content`} backgroundColor={barColor}/>
@@ -32,7 +33,7 @@ const HeaderBar = ({showBookMark , bookMarkOnPress , showDetails , barStyle="dar
                 <TouchableOpacity
                     onPress={()=>navigation.goBack()}
                 >
-                    <RightArrow size={25} color={COLORS.darkGray}/>
+                    <RightArrow size={25} color={COLORS.black}/>
                 </TouchableOpacity>
             </View>
             {/* lefts */}
@@ -48,7 +49,7 @@ const HeaderBar = ({showBookMark , bookMarkOnPress , showDetails , barStyle="dar
                         <TouchableOpacity
                             onPress={bookMarkOnPress}
                         >
-                            <BookMarkIcon size={25} />
+                            <BookMarkIcon size={25} color={COLORS.white} />
                         </TouchableOpacity>
                     )
                 }
@@ -57,7 +58,7 @@ const HeaderBar = ({showBookMark , bookMarkOnPress , showDetails , barStyle="dar
                         <TouchableOpacity
                             onPress={DetailsOnPress}
                         >
-                            <VerticalDotsIcon size={25} color={COLORS.black}/>
+                            <VerticalDotsIcon size={25} color={COLORS.white}/>
                         </TouchableOpacity>
                     )
                 }

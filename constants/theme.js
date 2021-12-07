@@ -13,10 +13,10 @@ export const COLORS = {
     white2: '#F9F9F9',
     black: "#020202",
     blue: "#4096FE",
-    gray: "#777777",
+    gray: "#9e9e9e",
     gray2: '#F8F8F8',
-    lightGray: "#F5F6FB",
-    lightGray2: '#757575',
+    lightGray: "#fafafa",
+    lightGray2: '#FAFAFA',
     darkGray : '#696969',
     red : 'rgb(177,39,37)',
 
@@ -56,11 +56,11 @@ export const SIZES = {
     height
 };
 export const FONTS = {
-    largeTitle: { fontFamily: "BYekan", fontSize: SIZES.largeTitle },
-    h1: { fontFamily: "BYekan", fontSize: SIZES.h1, lineHeight: 36 },
-    h2: { fontFamily: "BYekan", fontSize: SIZES.h2, lineHeight: 30 },
-    h3: { fontFamily: "BYekan", fontSize: SIZES.h3, lineHeight: 22 },
-    h4: { fontFamily: "BYekan", fontSize: SIZES.h4, lineHeight: 22 },
+    largeTitle: { fontFamily: "IRANSansMobile", fontSize: SIZES.largeTitle },
+    h1: { fontFamily: "IRANSansMobile", fontSize: SIZES.h1 },
+    h2: { fontFamily: "IRANSansMobile", fontSize: SIZES.h2 },
+    h3: { fontFamily: "IRANSansMobile", fontSize: SIZES.h3 },
+    h4: { fontFamily: "IRANSansMobile", fontSize: SIZES.h4 },
     body1: { fontFamily: "IRANSansMobile", fontSize: SIZES.body1, lineHeight: 36 },
     body2: { fontFamily: "IRANSansMobile", fontSize: SIZES.body2, lineHeight: 30 },
     body3: { fontFamily: "IRANSansMobile", fontSize: SIZES.body3, lineHeight: 22 },
