@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect , useRef} from 'react';
 import {
   View,
   Text,
@@ -8,15 +8,21 @@ import {
   TouchableOpacity,
   StatusBar,
   StyleSheet,
+  Linking,
+  Animated
 } from 'react-native';
 import {BottomModal, Dots, HeaderBar, TextButton} from '../components';
 import {COLORS, FONTS, numberWithCommas, SIZES} from '../constants';
-import {CloseIcon, LeftIcon, ZoomOut} from '../constants/VectorIcons';
+import {BookMarkIcon, CallIcon, ChatIcon, CloseIcon, LeftIcon, ZoomOut} from '../constants/VectorIcons';
 
 const Details = ({navigation, route}) => {
+
   const [selectedItem, setSelectedItem] = useState(null);
   const [showFullImages, setShowFullImages] = useState(false);
   const [showPhoneModal, setShowPhoneModal] = useState(false);
+
+  const modalAnim = useRef(new Animated.Value(0)).current;
+
 
   useEffect(() => {
     const {product} = route.params;
@@ -96,7 +102,7 @@ const Details = ({navigation, route}) => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Dots number={selectedItem?.images.length} />
+        <Dots number={selectedItem?.images?.length} />
       </View>
     );
   };
@@ -358,11 +364,34 @@ const Details = ({navigation, route}) => {
             width: '100%',
             height: '100%',
           }}
-          onPress={() => setShowPhoneModal(true)}
+          onPress={() => handleShowPhone(true)}
         />
       </View>
     );
   };
+
+  const handleShowPhone = (bol) =>{
+
+    if(bol){
+        setShowPhoneModal(bol)
+        getUp()
+    }else{
+        setShowPhoneModal(bol)
+        modalAnim.setValue(0)
+    }
+  }
+
+  const getUp = () => {
+    Animated.timing(modalAnim, {
+      toValue: 210,
+      duration: 800,
+      delay:200,
+      useNativeDriver:false,
+    
+    }).start();
+  };
+
+  
 
   if (showFullImages) {
     return (
@@ -434,8 +463,70 @@ const Details = ({navigation, route}) => {
       {renderFixedPhoneInfo()}
       {/* phone modal */}
       {showPhoneModal && (
-        <BottomModal onClose={() => setShowPhoneModal(false)}>
-          <Text>sadegh</Text>
+        <BottomModal onClose={() => handleShowPhone(false)}>
+          <Animated.View
+                  style={
+                    {
+                      height: modalAnim
+                    }
+                  }
+          >
+              {/* header */}
+              <View 
+                style={{
+                    borderBottomWidth : 1,
+                    borderBottomColor : COLORS.border,
+                    marginVertical:SIZES.base,
+                    paddingVertical : SIZES.base,
+                    paddingHorizontal :SIZES.base
+                }}
+              >
+                  <Text style={{...FONTS.h3 , color:COLORS.gray}}>اطلاعات تماس</Text>
+              </View>
+              {/* body */}
+              <View>
+                  <TouchableOpacity activeOpacity={0.6}
+                    onPress={()=>Linking.openURL(`tel:${selectedItem?.phone}`)}
+                  >
+                      <View
+                        style={{
+                            flexDirection:'row',
+                            alignItems:'center',
+                            height : 50
+                        }}
+                      >
+                          <CallIcon color={COLORS.red} size={25}/>
+                          <Text style={{...FONTS.h4 , color:COLORS.black , marginLeft : 10}}> تماس تلفنی با {selectedItem?.phone}</Text>
+                      </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity activeOpacity={0.6}
+                  >
+                      <View
+                        style={{
+                            flexDirection:'row',
+                            alignItems:'center',
+                            height : 50
+                        }}
+                      >
+                          <ChatIcon color={COLORS.red} size={25}/>
+                          <Text style={{...FONTS.h4 , color:COLORS.black , marginLeft : 10}}> ارسال پیام به  {selectedItem?.phone}</Text>
+                      </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity activeOpacity={0.6}
+                  >
+                      <View
+                        style={{
+                            flexDirection:'row',
+                            alignItems:'center',
+                            height : 50
+                        }}
+                      >
+                          <BookMarkIcon color={COLORS.red} size={25}/>
+                          <Text style={{...FONTS.h4 , color:COLORS.black , marginLeft : 20}}>نشان کن تا بعدا تماس بگیرم</Text>
+                      </View>
+                  </TouchableOpacity>
+              </View>
+          </Animated.View>
         </BottomModal>
       )}
 

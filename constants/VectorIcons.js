@@ -55,7 +55,7 @@ const RightArrow = ({color , size})=>(
 )
 
 const BookMarkIcon = ({color  , size})=>(
-    <FontAwesome name="bookmark" size={size} color={color}/>
+    <FontAwesome name="bookmark-o" size={size} color={color}/>
 )
 
 const VerticalDotsIcon = ({color  , size})=>(
@@ -68,6 +68,14 @@ const ZoomOut = ({color  , size})=>(
 
 const LeftIcon = ({color , size})=>(
     <AntDesign name="left" size={size} color={color}/>
+)
+
+const CallIcon = ({color  , size})=>(
+    <MaterialIcons name="call" size={size} color={color}/>
+)
+
+const ChatIcon = ({color  , size})=>(
+    <MaterialIcons name="chat" size={size} color={color}/>
 )
 
 export {
@@ -86,5 +94,7 @@ export {
     BookMarkIcon,
     VerticalDotsIcon,
     ZoomOut,
-    LeftIcon
+    LeftIcon,
+    CallIcon,
+    ChatIcon
     }
