@@ -11,7 +11,7 @@ import {
   Linking,
   Animated
 } from 'react-native';
-import {BottomModal, Dots, HeaderBar, TextButton} from '../components';
+import {BottomModal, Dots, HeaderBar, Loading, TextButton} from '../components';
 import {COLORS, FONTS, numberWithCommas, SIZES} from '../constants';
 import {BookMarkIcon, CallIcon, ChatIcon, CloseIcon, LeftIcon, ZoomOut} from '../constants/VectorIcons';
 
@@ -441,6 +441,7 @@ const Details = ({navigation, route}) => {
       </View>
     );
   }
+
 
   return (
     <View

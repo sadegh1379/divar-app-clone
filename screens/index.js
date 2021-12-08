@@ -3,6 +3,7 @@ import Chat from "./Chat"
 import Details from "./Details"
 import Groupe from "./Groupe"
 import Home from "./Home"
+import NotNetwork from "./NotNetwork"
 import Profile from "./Profile"
 
 export {
@@ -11,5 +12,6 @@ export {
     Chat,
     Profile,
     Groupe,
-    Details
+    Details,
+    NotNetwork
 }

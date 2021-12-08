@@ -1184,6 +1184,11 @@
   "resolved" "https://registry.npmjs.org/@react-native-community/masked-view/-/masked-view-0.1.11.tgz"
   "version" "0.1.11"
 
+"@react-native-community/netinfo@^7.1.4":
+  "integrity" "sha512-78zQ4e9k36eGIityJCDd6W9bLg28QbHcbKyj/0vHU6rdUclCdeChZsCOtiLZ21l2q9j4F6bvoP8N5W53o3Jduw=="
+  "resolved" "https://registry.npmjs.org/@react-native-community/netinfo/-/netinfo-7.1.4.tgz"
+  "version" "7.1.4"
+
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
   "resolved" "https://registry.npmjs.org/@react-native/assets/-/assets-1.0.0.tgz"
@@ -5792,7 +5797,7 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native@*", "react-native@>=0.55", "react-native@>=0.57", "react-native@>=0.57.0", "react-native@0.66.3":
+"react-native@*", "react-native@>=0.55", "react-native@>=0.57", "react-native@>=0.57.0", "react-native@>=0.59", "react-native@0.66.3":
   "integrity" "sha512-B/dQpuvta9YvF5MihDWefoGlTvxzUHK5X5RjdrXHAu/ihTehJXxEA+m6z/tufp1ZUMDjU+tMZK6gnehzCuYfzw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.66.3.tgz"
   "version" "0.66.3"

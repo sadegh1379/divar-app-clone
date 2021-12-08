@@ -26,7 +26,7 @@ import {
   BagIcon,
   CloseIcon,
 } from '../constants/VectorIcons';
-import {ProductCard} from '../components';
+import {Loading, ProductCard} from '../components';
 
 const Home = ({navigation}) => {
 
