@@ -5,6 +5,7 @@ import Loading from './Loading';
 import ProductCard from './ProductCard';
 import TabIcon from './TabIcon';
 import TextButton from './TextButton';
+import HeaderBar2 from './HeaderBar2';
 
 export {
   TabIcon,
@@ -13,5 +14,6 @@ export {
   Dots,
   TextButton,
   BottomModal,
-  Loading
+  Loading,
+  HeaderBar2
 };

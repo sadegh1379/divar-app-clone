@@ -30,6 +30,7 @@ const Tabs = () => {
                    borderTopColor : COLORS.transparent
                }
            }}
+           initialRouteName="Groupe_tab"
         >
             <Tab.Screen
                 name="Tabs"

@@ -324,6 +324,7 @@ const Home = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
       {/* search bar */}
+      
       {renderSeachBar()}
       {search.length > 0 ? (
         renderSearchPage()

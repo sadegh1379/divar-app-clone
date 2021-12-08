@@ -442,6 +442,7 @@ const Details = ({navigation, route}) => {
     );
   }
 
+ 
 
   return (
     <View
@@ -459,7 +460,6 @@ const Details = ({navigation, route}) => {
           zIndex: 20,
         }}
       />
-
       {/* fixed phone info */}
       {renderFixedPhoneInfo()}
       {/* phone modal */}

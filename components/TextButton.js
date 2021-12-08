@@ -6,6 +6,7 @@ const TextButton = ({title , onPress , customContainerStyle , customBtnStyle}) =
     return (
         <TouchableOpacity
             onPress={onPress}
+            
             style={{
                 backgroundColor:COLORS.red,
                 justifyContent:'center',

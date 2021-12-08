@@ -12,7 +12,7 @@ const Loading = () => {
                 right : 0,
                 bottom:0,
                 backgroundColor:COLORS.transparentBlack1,
-                zIndex : 1,
+                zIndex : 100,
                 justifyContent:'center',
                 alignItems:'center'
             }}
